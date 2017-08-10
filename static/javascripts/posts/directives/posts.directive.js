@@ -15,17 +15,17 @@
   function posts() {
     /**
     * @name directive
-    * @desc the directive to be returned
+    * @desc The directive to be returned
     * @memberOf thinkster.posts.directives.Posts
     */
     var directive = {
       controller: 'PostsController',
       controllerAs: 'vm',
       restrict: 'E',
-      scrope: {
+      scope: {
         posts: '='
       },
-      templateUrl: '/static/templates/posts/post.html'
+      templateUrl: '/static/templates/posts/posts.html'
     };
 
     return directive;

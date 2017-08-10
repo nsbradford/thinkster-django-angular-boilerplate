@@ -1,4 +1,4 @@
-/*
+/**
 * Posts
 * @namespace thinkster.posts.services
 */
@@ -62,4 +62,3 @@
     }
   }
 })();
-

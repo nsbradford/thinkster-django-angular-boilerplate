@@ -1,7 +1,5 @@
 /**
 * PostsController
-* this controller presents an algorithm for 
-* ensuring the columns of posts are of approximately equal height
 * @namespace thinkster.posts.controllers
 */
 (function () {
