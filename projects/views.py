@@ -2,29 +2,29 @@
 from rest_framework import permissions, viewsets
 from rest_framework.response import Response
 
-from posts.models import Post
-from posts.permissions import IsAuthorOfPost
-from posts.serializers import PostSerializer
+from projects.models import Project
+from projects.permissions import IsAuthorOfProject
+from projects.serializers import ProjectSerializer
 
 
-class PostViewSet(viewsets.ModelViewSet):
-    queryset = Post.objects.order_by('-created_at')
-    serializer_class = PostSerializer
+class ProjectViewSet(viewsets.ModelViewSet):
+    queryset = Project.objects.order_by('-created_at')
+    serializer_class = ProjectSerializer
 
     def get_permissions(self):
         if self.request.method in permissions.SAFE_METHODS:
             return (permissions.AllowAny(),)
-        return (permissions.IsAuthenticated(), IsAuthorOfPost(),)
+        return (permissions.IsAuthenticated(), IsAuthorOfProject(),)
 
     def perform_create(self, serializer):
         instance = serializer.save(author=self.request.user)
-        return super(PostViewSet, self).perform_create(serializer)
+        return super(ProjectViewSet, self).perform_create(serializer)
 
 
 
-class AccountPostsViewSet(viewsets.ViewSet):
-    queryset = Post.objects.select_related('author').all()
-    serializer_class = PostSerializer
+class AccountProjectsViewSet(viewsets.ViewSet):
+    queryset = Project.objects.select_related('author').all()
+    serializer_class = ProjectSerializer
 
     def list(self, request, account_username=None):
         queryset = self.queryset.filter(author__username=account_username)
