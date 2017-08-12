@@ -1,20 +1,20 @@
-.no-posts-here {
+.no-projects-here {
   text-align: center;
 }
 
-.post {}
+.project {}
 
-.post .post__meta {
+.project .project__meta {
   font-weight: bold;
   text-align: right;
   padding-bottom: 19px;
 }
 
-.post .post__meta a:hover {
+.project .project__meta a:hover {
   text-decoration: none;
 }
 
-.btn-add-new-post {
+.btn-add-new-project {
   position: fixed;
   bottom: 20px;
   right: 20px;

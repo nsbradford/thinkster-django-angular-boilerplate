@@ -1,20 +1,20 @@
 /**
-* PostsController
-* @namespace thinkster.posts.controllers
+* DiscoverProjectsController
+* @namespace thinkster.projects.controllers
 */
 (function () {
   'use strict';
 
   angular
-    .module('thinkster.posts.controllers')
-    .controller('PostsController', PostsController);
+    .module('thinkster.projects.controllers')
+    .controller('DiscoverProjectsController', DiscoverProjectsController);
 
-  PostsController.$inject = ['$scope'];
+  DiscoverProjectsController.$inject = ['$scope'];
 
   /**
-  * @namespace PostsController
+  * @namespace DiscoverProjectsController
   */
-  function PostsController($scope) {
+  function DiscoverProjectsController($scope) {
     var vm = this;
 
     vm.columns = [];
@@ -25,10 +25,10 @@
     /**
     * @name activate
     * @desc Actions to be performed when this controller is instantiated
-    * @memberOf thinkster.posts.controllers.PostsController
+    * @memberOf thinkster.projects.controllers.DiscoverProjectsController
     */
     function activate() {
-      $scope.$watchCollection(function () { return $scope.posts; }, render);
+      $scope.$watchCollection(function () { return $scope.projects; }, render);
       $scope.$watch(function () { return $(window).width(); }, render);
     }
 
@@ -36,8 +36,8 @@
     /**
     * @name calculateNumberOfColumns
     * @desc Calculate number of columns based on screen width
-    * @returns {Number} The number of columns containing Posts
-    * @memberOf thinkster.posts.controllers.PostsControllers
+    * @returns {Number} The number of columns containing Projects
+    * @memberOf thinkster.projects.controllers.DiscoverProjectsControllers
     */
     function calculateNumberOfColumns() {
       var width = $(window).width();
@@ -58,7 +58,7 @@
     * @name approximateShortestColumn
     * @desc An algorithm for approximating which column is shortest
     * @returns The index of the shortest column
-    * @memberOf thinkster.posts.controllers.PostsController
+    * @memberOf thinkster.projects.controllers.DiscoverProjectsController
     */
     function approximateShortestColumn() {
       var scores = vm.columns.map(columnMapFn);
@@ -95,10 +95,10 @@
 
     /**
     * @name render
-    * @desc Renders Posts into columns of approximately equal height
-    * @param {Array} current The current value of `vm.posts`
-    * @param {Array} original The value of `vm.posts` before it was updated
-    * @memberOf thinkster.posts.controllers.PostsController
+    * @desc Renders Projects into columns of approximately equal height
+    * @param {Array} current The current value of `vm.projects`
+    * @param {Array} original The value of `vm.projects` before it was updated
+    * @memberOf thinkster.projects.controllers.DiscoverProjectsController
     */
     function render(current, original) {
       if (current !== original) {

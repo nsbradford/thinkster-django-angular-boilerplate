@@ -1,36 +1,36 @@
 /**
-* Posts
-* @namespace thinkster.posts.services
+* Projects
+* @namespace thinkster.projects.services
 */
 (function () {
   'use strict';
 
   angular
-    .module('thinkster.posts.services')
-    .factory('Posts', Posts);
+    .module('thinkster.projects.services')
+    .factory('Projects', Projects);
 
-  Posts.$inject = ['$http'];
+  Projects.$inject = ['$http'];
 
   /**
-  * @namespace Posts
+  * @namespace Projects
   * @returns {Factory}
   */
-  function Posts($http) {
-    var Posts = {
+  function Projects($http) {
+    var Projects = {
       all: all,
       create: create,
       get: get
     };
 
-    return Posts;
+    return Projects;
 
     ////////////////////
 
     /**
     * @name all
-    * @desc Get all Posts
+    * @desc Get all Projects
     * @returns {Promise}
-    * @memberOf thinkster.posts.services.Posts
+    * @memberOf thinkster.projects.services.Projects
     */
     function all() {
       return $http.get('/api/v1/projects/');
@@ -39,10 +39,10 @@
 
     /**
     * @name create
-    * @desc Create a new Post
-    * @param {string} content The content of the new Post
+    * @desc Create a new Project
+    * @param {string} content The content of the new Project
     * @returns {Promise}
-    * @memberOf thinkster.posts.services.Posts
+    * @memberOf thinkster.projects.services.Projects
     */
     function create(content) {
       return $http.post('/api/v1/projects/', {
@@ -52,10 +52,10 @@
 
     /**
      * @name get
-     * @desc Get the Posts of a given user
-     * @param {string} username The username to get Posts for
+     * @desc Get the Projects of a given user
+     * @param {string} username The username to get Projects for
      * @returns {Promise}
-     * @memberOf thinkster.posts.services.Posts
+     * @memberOf thinkster.projects.services.Projects
      */
     function get(username) {
       return $http.get('/api/v1/accounts/' + username + '/projects/');

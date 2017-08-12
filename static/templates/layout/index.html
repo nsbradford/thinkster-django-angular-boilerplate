@@ -1,6 +1,6 @@
-<posts posts="vm.posts" ng-show="vm.posts && vm.posts.length"></posts>
-<a class="btn btn-primary btn-fab btn-raised mdi-content-add btn-add-new-post"
+<discover-projects projects="vm.projects" ng-show="vm.projects && vm.projects.length"></discover-projects>
+<a class="btn btn-primary btn-fab btn-raised mdi-content-add btn-add-new-project"
   href="javascript:void(0)"
   ng-show="vm.isAuthenticated"
-  ng-dialog="/static/templates/posts/new-post.html"
-  ng-dialog-controller="NewPostController as vm"></a>
+  ng-dialog="/static/templates/projects/new-project.html"
+  ng-dialog-controller="NewProjectController as vm"></a>

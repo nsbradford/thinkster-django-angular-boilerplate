@@ -9,16 +9,16 @@
     .module('thinkster.profiles.controllers')
     .controller('ProfileController', ProfileController);
 
-  ProfileController.$inject = ['$location', '$routeParams', 'Posts', 'Profile', 'Snackbar'];
+  ProfileController.$inject = ['$location', '$routeParams', 'Projects', 'Profile', 'Snackbar'];
 
   /**
   * @namespace ProfileController
   */
-  function ProfileController($location, $routeParams, Posts, Profile, Snackbar) {
+  function ProfileController($location, $routeParams, Projects, Profile, Snackbar) {
     var vm = this;
 
     vm.profile = undefined;
-    vm.posts = [];
+    vm.projects = [];
 
     activate();
 
@@ -31,7 +31,7 @@
       var username = $routeParams.username.substr(1);
 
       Profile.get(username).then(profileSuccessFn, profileErrorFn);
-      Posts.get(username).then(postsSuccessFn, postsErrorFn);
+      Projects.get(username).then(projectsSuccessFn, projectsErrorFn);
 
       /**
       * @name profileSuccessProfile
@@ -53,19 +53,19 @@
 
 
       /**
-        * @name postsSucessFn
-        * @desc Update `posts` on viewmodel
+        * @name projectsSucessFn
+        * @desc Update `projects` on viewmodel
         */
-      function postsSuccessFn(data, status, headers, config) {
-        vm.posts = data.data;
+      function projectsSuccessFn(data, status, headers, config) {
+        vm.projects = data.data;
       }
 
 
       /**
-        * @name postsErrorFn
+        * @name projectsErrorFn
         * @desc Show error snackbar
         */
-      function postsErrorFn(data, status, headers, config) {
+      function projectsErrorFn(data, status, headers, config) {
         Snackbar.error(data.data.error);
       }
     }

@@ -9,16 +9,16 @@
     .module('thinkster.layout.controllers')
     .controller('IndexController', IndexController);
 
-  IndexController.$inject = ['$scope', 'Authentication', 'Posts', 'Snackbar'];
+  IndexController.$inject = ['$scope', 'Authentication', 'Projects', 'Snackbar'];
 
   /**
   * @namespace IndexController
   */
-  function IndexController($scope, Authentication, Posts, Snackbar) {
+  function IndexController($scope, Authentication, Projects, Snackbar) {
     var vm = this;
 
     vm.isAuthenticated = Authentication.isAuthenticated();
-    vm.posts = [];
+    vm.projects = [];
 
     activate();
 
@@ -28,31 +28,31 @@
     * @memberOf thinkster.layout.controllers.IndexController
     */
     function activate() {
-      Posts.all().then(postsSuccessFn, postsErrorFn);
+      Projects.all().then(projectsSuccessFn, projectsErrorFn);
 
-      $scope.$on('post.created', function (event, post) {
-        vm.posts.unshift(post);
+      $scope.$on('project.created', function (event, project) {
+        vm.projects.unshift(project);
       });
 
-      $scope.$on('post.created.error', function () {
-        vm.posts.shift();
+      $scope.$on('project.created.error', function () {
+        vm.projects.shift();
       });
 
 
       /**
-      * @name postsSuccessFn
-      * @desc Update posts array on view
+      * @name projectsSuccessFn
+      * @desc Update projects array on view
       */
-      function postsSuccessFn(data, status, headers, config) {
-        vm.posts = data.data;
+      function projectsSuccessFn(data, status, headers, config) {
+        vm.projects = data.data;
       }
 
 
       /**
-      * @name postsErrorFn
+      * @name projectsErrorFn
       * @desc Show snackbar with error
       */
-      function postsErrorFn(data, status, headers, config) {
+      function projectsErrorFn(data, status, headers, config) {
         Snackbar.error(data.error);
       }
     }
