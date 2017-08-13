@@ -1,12 +1,12 @@
 /**
 * DiscoverProjectsController
-* @namespace thinkster.projects.controllers
+* @namespace projecthub.projects.controllers
 */
 (function () {
   'use strict';
 
   angular
-    .module('thinkster.projects.controllers')
+    .module('projecthub.projects.controllers')
     .controller('DiscoverProjectsController', DiscoverProjectsController);
 
   DiscoverProjectsController.$inject = ['$scope'];
@@ -25,7 +25,7 @@
     /**
     * @name activate
     * @desc Actions to be performed when this controller is instantiated
-    * @memberOf thinkster.projects.controllers.DiscoverProjectsController
+    * @memberOf projecthub.projects.controllers.DiscoverProjectsController
     */
     function activate() {
       $scope.$watchCollection(function () { return $scope.projects; }, render);
@@ -37,7 +37,7 @@
     * @name calculateNumberOfColumns
     * @desc Calculate number of columns based on screen width
     * @returns {Number} The number of columns containing Projects
-    * @memberOf thinkster.projects.controllers.DiscoverProjectsControllers
+    * @memberOf projecthub.projects.controllers.DiscoverProjectsControllers
     */
     function calculateNumberOfColumns() {
       var width = $(window).width();
@@ -58,7 +58,7 @@
     * @name approximateShortestColumn
     * @desc An algorithm for approximating which column is shortest
     * @returns The index of the shortest column
-    * @memberOf thinkster.projects.controllers.DiscoverProjectsController
+    * @memberOf projecthub.projects.controllers.DiscoverProjectsController
     */
     function approximateShortestColumn() {
       var scores = vm.columns.map(columnMapFn);
@@ -98,7 +98,7 @@
     * @desc Renders Projects into columns of approximately equal height
     * @param {Array} current The current value of `vm.projects`
     * @param {Array} original The value of `vm.projects` before it was updated
-    * @memberOf thinkster.projects.controllers.DiscoverProjectsController
+    * @memberOf projecthub.projects.controllers.DiscoverProjectsController
     */
     function render(current, original) {
       if (current !== original) {

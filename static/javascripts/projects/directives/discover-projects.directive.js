@@ -1,12 +1,12 @@
 /**
 * Projects
-* @namespace thinkster.projects.directives
+* @namespace projecthub.projects.directives
 */
 (function () {
   'use strict';
 
   angular
-    .module('thinkster.projects.directives')
+    .module('projecthub.projects.directives')
     .directive('discoverProjects', discoverProjects);
 
   /**
@@ -16,7 +16,7 @@
     /**
     * @name directive
     * @desc The directive to be returned
-    * @memberOf thinkster.projects.directives.Projects
+    * @memberOf projecthub.projects.directives.Projects
     */
     var directive = {
       controller: 'DiscoverProjectsController',

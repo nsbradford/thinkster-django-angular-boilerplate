@@ -1,6 +1,4 @@
-.no-projects-here {
-  text-align: center;
-}
+/* Individual Project */
 
 .project {}
 
@@ -12,6 +10,13 @@
 
 .project .project__meta a:hover {
   text-decoration: none;
+}
+
+
+/* DiscoverProjects */
+
+.no-projects-here {
+  text-align: center;
 }
 
 .btn-add-new-project {

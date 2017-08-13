@@ -1,12 +1,12 @@
 /**
 * Project
-* @namespace thinkster.projects.directives
+* @namespace projecthub.projects.directives
 */
 (function () {
   'use strict';
 
   angular
-    .module('thinkster.projects.directives')
+    .module('projecthub.projects.directives')
     .directive('project', project);
 
   /**
@@ -16,7 +16,7 @@
     /**
     * @name directive
     * @desc The directive to be returned
-    * @memberOf thinkster.projects.directives.Project
+    * @memberOf projecthub.projects.directives.Project
     */
     var directive = {
       restrict: 'E',

@@ -1,12 +1,12 @@
 /**
 * IndexController
-* @namespace thinkster.layout.controllers
+* @namespace projecthub.layout.controllers
 */
 (function () {
   'use strict';
 
   angular
-    .module('thinkster.layout.controllers')
+    .module('projecthub.layout.controllers')
     .controller('IndexController', IndexController);
 
   IndexController.$inject = ['$scope', 'Authentication', 'Projects', 'Snackbar'];
@@ -25,7 +25,7 @@
     /**
     * @name activate
     * @desc Actions to be performed when this controller is instantiated
-    * @memberOf thinkster.layout.controllers.IndexController
+    * @memberOf projecthub.layout.controllers.IndexController
     */
     function activate() {
       Projects.all().then(projectsSuccessFn, projectsErrorFn);

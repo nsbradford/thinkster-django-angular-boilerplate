@@ -2,24 +2,24 @@
   'use strict';
 
   angular
-    .module('thinkster', [
-      'thinkster.config',
-      'thinkster.routes',
-      'thinkster.authentication',
-      'thinkster.layout',
-      'thinkster.projects',
-      'thinkster.profiles',
-      'thinkster.utils',
+    .module('projecthub', [
+      'projecthub.config',
+      'projecthub.routes',
+      'projecthub.authentication',
+      'projecthub.layout',
+      'projecthub.projects',
+      'projecthub.profiles',
+      'projecthub.utils',
     ]);
 
   angular
-    .module('thinkster.routes', ['ngRoute']);
+    .module('projecthub.routes', ['ngRoute']);
 
   angular
-    .module('thinkster.config', []);
+    .module('projecthub.config', []);
 
   angular
-    .module('thinkster')
+    .module('projecthub')
     .run(run);
 
   run.$inject = ['$http'];

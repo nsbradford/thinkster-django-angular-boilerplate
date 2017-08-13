@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('thinkster.config')
+    .module('projecthub.config')
     .config(config);
 
   config.$inject = ['$locationProvider'];

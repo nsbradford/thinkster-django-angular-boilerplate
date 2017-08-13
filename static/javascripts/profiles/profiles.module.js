@@ -2,14 +2,14 @@
   'use strict';
 
   angular
-    .module('thinkster.profiles', [
-      'thinkster.profiles.controllers',
-      'thinkster.profiles.services'
+    .module('projecthub.profiles', [
+      'projecthub.profiles.controllers',
+      'projecthub.profiles.services'
     ]);
 
   angular
-    .module('thinkster.profiles.controllers', []);
+    .module('projecthub.profiles.controllers', []);
 
   angular
-    .module('thinkster.profiles.services', []);
+    .module('projecthub.profiles.services', []);
 })();

@@ -1,12 +1,12 @@
 /**
 * ProfileController
-* @namespace thinkster.profiles.controllers
+* @namespace projecthub.profiles.controllers
 */
 (function () {
   'use strict';
 
   angular
-    .module('thinkster.profiles.controllers')
+    .module('projecthub.profiles.controllers')
     .controller('ProfileController', ProfileController);
 
   ProfileController.$inject = ['$location', '$routeParams', 'Projects', 'Profile', 'Snackbar'];
@@ -25,7 +25,7 @@
     /**
     * @name activate
     * @desc Actions to be performed when this controller is instantiated
-    * @memberOf thinkster.profiles.controllers.ProfileController
+    * @memberOf projecthub.profiles.controllers.ProfileController
     */
     function activate() {
       var username = $routeParams.username.substr(1);

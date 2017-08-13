@@ -1,12 +1,12 @@
 /**
 * NewProjectController
-* @namespace thinkster.projects.controllers
+* @namespace projecthub.projects.controllers
 */
 (function () {
   'use strict';
 
   angular
-    .module('thinkster.projects.controllers')
+    .module('projecthub.projects.controllers')
     .controller('NewProjectController', NewProjectController);
 
   NewProjectController.$inject = ['$rootScope', '$scope', 'Authentication', 'Snackbar', 'Projects'];
@@ -27,7 +27,7 @@
     * to understand. For these reasons, this should be removed in final production.
     * @name submit
     * @desc Create a new Project
-    * @memberOf thinkster.projects.controllers.NewProjectController
+    * @memberOf projecthub.projects.controllers.NewProjectController
     */
     function submit() {
       $rootScope.$broadcast('project.created', {

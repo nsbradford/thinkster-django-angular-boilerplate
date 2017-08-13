@@ -1,12 +1,12 @@
 /**
 * Projects
-* @namespace thinkster.projects.services
+* @namespace projecthub.projects.services
 */
 (function () {
   'use strict';
 
   angular
-    .module('thinkster.projects.services')
+    .module('projecthub.projects.services')
     .factory('Projects', Projects);
 
   Projects.$inject = ['$http'];
@@ -30,7 +30,7 @@
     * @name all
     * @desc Get all Projects
     * @returns {Promise}
-    * @memberOf thinkster.projects.services.Projects
+    * @memberOf projecthub.projects.services.Projects
     */
     function all() {
       return $http.get('/api/v1/projects/');
@@ -42,7 +42,7 @@
     * @desc Create a new Project
     * @param {string} content The content of the new Project
     * @returns {Promise}
-    * @memberOf thinkster.projects.services.Projects
+    * @memberOf projecthub.projects.services.Projects
     */
     function create(content) {
       return $http.post('/api/v1/projects/', {
@@ -55,7 +55,7 @@
      * @desc Get the Projects of a given user
      * @param {string} username The username to get Projects for
      * @returns {Promise}
-     * @memberOf thinkster.projects.services.Projects
+     * @memberOf projecthub.projects.services.Projects
      */
     function get(username) {
       return $http.get('/api/v1/accounts/' + username + '/projects/');

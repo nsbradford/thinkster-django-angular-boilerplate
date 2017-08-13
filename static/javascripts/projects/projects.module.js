@@ -2,18 +2,18 @@
   'use strict';
 
   angular
-    .module('thinkster.projects', [
-      'thinkster.projects.controllers',
-      'thinkster.projects.directives',
-      'thinkster.projects.services'
+    .module('projecthub.projects', [
+      'projecthub.projects.controllers',
+      'projecthub.projects.directives',
+      'projecthub.projects.services'
     ]);
 
   angular
-    .module('thinkster.projects.controllers', []);
+    .module('projecthub.projects.controllers', []);
 
   angular
-    .module('thinkster.projects.directives', ['ngDialog']);
+    .module('projecthub.projects.directives', ['ngDialog']);
 
   angular
-    .module('thinkster.projects.services', []);
+    .module('projecthub.projects.services', []);
 })();
