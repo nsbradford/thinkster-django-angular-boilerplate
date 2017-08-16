@@ -32,7 +32,7 @@
 
     return Authentication;
 
-    ////////////////////
+    /* Begin functions */
 
     /**
     * @name register

@@ -36,3 +36,10 @@ Create a Python virtual environment, install bower components, instantiate the d
     * GET (get one)   '/api/v1/accounts/' + username + '/projects/'
 * API LoginView:      api/v1/auth/login/
 * API LogoutView:     api/v1/auth/logout/
+
+## TODO
+
+* Comment code
+* Django tests
+* E2E tests
+* grunt-jsdoc: documentation generation from js comments

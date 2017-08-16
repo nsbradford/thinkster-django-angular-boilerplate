@@ -27,7 +27,6 @@ accounts_router = routers.NestedSimpleRouter(
 )
 accounts_router.register(r'projects', AccountProjectsViewSet)
 
-
 urlpatterns = patterns(
     '',
     url(r'^api/v1/', include(router.urls)),
